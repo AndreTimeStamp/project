@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app2
+  labels:
+    app: app
+spec:
+  selector:
+    matchLabels:
+      app: app
+      role: master
+      tier: backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app
+        role: master
+        tier: backend
+    spec:
+      containers:
+      - name: appcontainer
+        image: docker.io/bedjase/repository:my-java-app
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 8085
