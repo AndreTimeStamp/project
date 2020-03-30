@@ -8,7 +8,7 @@ public class HelloWorldService {
 
 	@RequestMapping("/Hello")
 	public String test() {
-		return "Hello I made it!";
+		return "Hello I made it! With Kubernetes!";
 	}
 
 	
